@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: cursive;
+	display: grid;
+	background-color: #D7E1A2;
+	place-items: center;
+	height:100vh;
+}
+.calc{
+	width: 40%;
+	height: 70%;
+	background-color: transparent;
+	position: absolute;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+#ans{
+	width: 90%;
+	margin-top: 20px;
+	font-family: arial;
+	font-size: 20px;
+	color: blue;
+	text-align: right;
+}
+.btn input[type='button']{
+	width: 90px;
+	padding: 2px;
+	margin: 4px;
+	position: relative;
+	left: 23px;
+	top: 20px;
+	height: 55px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: all 0.5s ease;
+	background-color: transparent;
+	border-radius: 6px;
+}
+.btn input[type='button']:hover{
+	background-color: pink;
+	color: white;
+}

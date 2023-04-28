@@ -1,0 +1,130 @@
+{
+	"menu":[
+		{
+			"nombre":"Hamburguesa",
+			"descripcion":"Contiene carne",
+			"precio":100,
+			"imagen":"img/hamburguesa.png"
+		},
+		{
+			"nombre":"Tacos",
+			"descripcion":"Tortillas y carne xd",
+			"precio":90,
+			"imagen":"img/tacos.png"
+		},
+		{
+			"nombre":"Boneless",
+			"descripcion":"5 piezas nosejdf",
+			"precio":120,
+			"imagen":"img/boneless.png"
+		},
+		{
+			"nombre":"Pollo Asado",
+			"descripcion":"pollo, tortillas y salsa",
+			"precio":70,
+			"imagen":"img/polloasado.png"
+		},
+		{
+			"nombre":"Hot Dogs",
+			"descripcion":"pan y salchicha",
+			"precio":60,
+			"imagen":"img/hotdogs.png"
+		},
+		{
+			"nombre":"Alitas",
+			"descripcion":"yum",
+			"precio":90,
+			"imagen":"img/alitas.png"
+		},
+		{
+			"nombre":"Pollo frito",
+			"descripcion":"eeee",
+			"precio":120,
+			"imagen":"img/pollofrito.png"
+		},
+		{
+			"nombre":"Tostadas",
+			"descripcion":"Cidsf",
+			"precio":60,
+			"imagen":"img/tostadas.png"
+		},
+		{
+			"nombre":"Flautas",
+			"descripcion":"ndsjfhjkfg",
+			"precio":100,
+			"imagen":"img/flautas.png"
+		}
+		{
+			"nombre":"Pizza",
+			"descripcion":"haidfjk",
+			"precio":90,
+			"imagen":"img/pizza.png"
+		},
+		{
+			"nombre":"Nuggets",
+			"descripcion":"sdjkh",
+			"precio":60,
+			"imagen":"img/nuggets.png"
+		}
+
+	],
+	"extras":[
+		{
+			"nombre":"Tocino",
+			"descripcion":"Contiene carne",
+			"precio":10,
+			"imagen":"img/tocino.png"
+		},
+		{
+			"nombre":"Piña",
+			"descripcion":"Contiene carne",
+			"precio":10,
+			"imagen":"img/piña.png"
+		},
+		{
+			"nombre":"Pepinillos",
+			"descripcion":"Contiene carne",
+			"precio":15,
+			"imagen":"img/pepinillos.png"
+		},
+		{
+			"nombre":"Queso",
+			"descripcion":"Contiene carne",
+			"precio":15,
+			"imagen":"img/queso.png"
+		},
+		{
+			"nombre":"Aderezo",
+			"descripcion":"Contiene carne",
+			"precio":15,
+			"imagen":"img/aderezo.png"
+		}
+	],
+	"bebidas":[
+		{
+			"nombre":"Coca-Cola",
+			"precio":20,
+			"imagen":"img/cocacola.png"
+		},
+		{
+			"nombre":"Sprite",
+			"precio":20,
+			"imagen":"img/sprite.png"
+		},
+		{
+			"nombre":"Fanta",
+			"precio":20,
+			"imagen":"img/fanta.png"
+		},
+		{
+			"nombre":"Pepsi",
+			"precio":20,
+			"imagen":"img/pepsi.png"
+		},
+		{
+			"nombre":"Agua de Limon",
+			"precio":20,
+			"imagen":"img/agualimon.png"
+		}
+	]
+}

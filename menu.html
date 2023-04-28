@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE_edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+    <title> Peliculas </title>
+</head>
+<body>
+  <div style="margin: 24px;">
+      <nav class="navbar navbar-light" style="background-color: #696D7D;">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Inicio</a>
+          <ul class="nav navbar-nav">
+                <li class="active">
+                  <a href="menu.html">Menu</a>
+                </li>
+                <li>
+                  <a href="formulario.html">Formulario</a>
+                </li>
+                <li>
+                  <a href="resultado.html">Resultado</a>
+                </li>
+                <li>
+                  <a href="contacto.html">Contacto</a>
+                </li>
+                <li>
+                   <a href="peliculas.html">Peliculas</a>
+                </li>
+                <li>
+                  <a href="fisica.html">Fisica</a>
+                </li>
+                <li>
+                  <a href="calculadora.html">Calculadora</a>
+                </li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+
+  <h1>Bienvenidos a la pagina de mi proyecto</h1>
+  <h2>Ana Lucia Lee Santiago</h2>
+
+  <titulo>MENÚ DEL RESTAURANTE</titulo>
+
+  <div id="menu"></div>
+
+  <script type="text/javascript">
+    fetch('menu.json')
+    .then(response=>response.json())
+    .then(data=>{
+      const tabla = document.createElement('table');
+      tabla.innerHTML=`
+      <thead>
+      <tr>
+          <th>Categoria</th>
+          <th>Imagen</th>
+          <th>Producto</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Seleccion</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+      `;
+
+      document.getElementById('menu').appendChild(tabla);
+
+      Object.keys(data).forEach(categoria =>{
+        data[categoria].forEach(producto =>{
+          const fila = document.createElement('tr')
+          fila.innerHTML=`
+          <td><img src="${producto.imagen}" alt="${producto.name}"></td>
+          <td>${producto.nombre}</td>
+          <td>${producto.descripcion}</td>
+          <td>${producto.precio}</td>
+          <td><input type="checkbox" class="producto" data-precio="${producto.precio}"></td>
+          `;
+          tabla.querySelector('tbody').appendChild(fila);
+
+        });
+      });
+
+      const productos= document.querySelectorAll('.producto');
+      productos.forEach(producto => {
+        producto.addEventListener('change', () =>{
+          var suma =0;
+          productos.forEach(producto => {
+            if(producto.checked){
+              suma +=parseFloat(producto.dataset.precio);
+            }
+          });
+          document.getElementById('resultado').innerHTML=`<h1>TOTAL:$${suma.toFixed(2)} </h1>`
+        });
+      });
+    })
+  </script>
+
+  <div id="footer"></div>
+<script type="text/javascript">
+  $(function(){
+    $("#footer").load("/lucia/footer.html");
+  });
+</script>
+
+</body>
+</html>

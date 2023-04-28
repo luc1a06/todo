@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE_edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+    <title> Peliculas </title>
+</head>
+<body>
+  <div style="margin: 24px;">
+      <nav class="navbar navbar-light" style="background-color: #696D7D;">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Inicio</a>
+          <ul class="nav navbar-nav">
+                <li class="active">
+                  <a href="menu.html">Menu</a>
+                </li>
+                <li>
+                  <a href="formulario.html">Formulario</a>
+                </li>
+                <li>
+                  <a href="resultado.html">Resultado</a>
+                </li>
+                <li>
+                  <a href="contacto.html">Contacto</a>
+                </li>
+                <li>
+                  <a href="peliculas.html">Peliculas</a>
+                </li>
+                <li>
+                  <a href="fisica.html">Fisica</a>
+                </li>
+                <li>
+                  <a href="calculadora.html">Calculadora</a>
+                </li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+
+  <h1>Bienvenidos a la pagina de mi proyecto</h1>
+  <h2>Ana Lucia Lee Santiago</h2>
+
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Calculadora de Movimiento</h1>
+    <p class="lead">Los elementos que se consideran necesarios para facilitar el aprendizaje de conceptos y la aplicación de modelos matemáticos en el campo de la Física, son algunos conceptos de las matemáticas como: </p>
+    <p><li>sistemas de unidades, <li>magnitudes escalares, <li>magnitudes vectoriales, <li>notación científica, <li>análisis dimensional.</p>
+
+<form id="formulario">
+  <label for="distancia">Distancia:</label>
+  <input type="text"  id="distancia" name="distancia">
+  <select id="distanciaUnidad">
+    <option value="metros">metros</option>
+    <option value="pies">pies</option>
+  </select>
+  <br>
+  <label for="tiempo">Tiempo</label>
+  <input type="text" id="tiempo" name="tiempo">
+  <select id="tiempoUnidad">
+    <option value="segundos">segundos</option>
+    <option value="horas">horas</option>
+  </select>
+  <br>
+  <label for="velocidadUnidad">Unidades de velocidad</label>
+  <select id="velocidadUnidad">
+    <option value="metros_por_segundo">m/s</option>
+    <option value="pies_por_segundo">ft/s</option>
+    <option value="kilometros_por_hora">km/hr</option>
+    <option value="millas_por_hora">mph</option>
+  </select>
+  <br>
+  <br>
+
+  <button type="button" class="btn btn-success" value="Calcular" onclick="Calcular()">Calcular</button>
+
+</form>
+<br>
+
+<p id="resultado"></p>
+
+<p style="color: #3d3ded; background-color: #ee8ce6"> Velocidad: <span id="velocidad"></span></p>
+<p style="color: #3d3ded; background-color: #ee8ce6"> Aceleracion: <span id="aceleracion"></span></p>
+<p style="color: #3d3ded; background-color: #ee8ce6"> Rapidez: <span id="rapidez"></span></p>
+
+<script>
+ 
+ function Calcular(){
+    const distancia = parseFloat(document.getElementById('distancia').value);
+    const tiempo = parseFloat(document.getElementById('tiempo').value);
+
+    //estas 3 variables son para poner las unidades metricas
+        const distanciaUnidad = document.getElementById('distanciaUnidad').value;
+        const tiempoUnidad = document.getElementById('tiempoUnidad').value;
+        const velocidadUnidad = document.getElementById('velocidadUnidad').value;
+
+        //Convertir unidades a Sistema Metrico Internacional (SI)
+        let distanciaSI = 0; 
+        let tiempoSI = 0;
+
+        //Dependiendo las unidades que seleccionaron, uso este IF
+        if(distanciaUnidad === 'metros'){
+          distanciaSI = distancia;
+        } else if(distanciaUnidad === 'pies'){
+          distanciaSI = distancia /3.281;
+        }
+        if (tiempoUnidad === 'segundos') {
+          tiempoSI = tiempo;
+        } else if(tiempoUnidad === 'horas'){
+          tiempoSI = tiempo * 3600; 
+        }
+
+        console.log("El valor de la distancia " +distancia);
+        console.log("El valor del tiempo " +tiempo);
+
+        //Con el siguiente codigo, voy a calcular la velocidad, aceleracion y la rapidez (aunque no hay formula, por lo pronto para ella, solo dire que es igual a la velociad)
+        
+        let velocidad = 0;
+        let aceleracion = 0;
+        let rapidez = 0;
+        
+        if(velocidadUnidad === 'metros_por_segundo'){
+          velocidad = distanciaSI / tiempoSI;
+          rapidez = velocidad;
+          aceleracion = velocidad / tiempoSI;
+        }
+        else if(velocidadUnidad === 'pies_por_segundo'){
+          velocidad = (distanciaSI * 3.281) / tiempoSI;
+          rapidez = velocidad;
+          aceleracion = velocidad / tiempoSI;
+        }
+        else if(velocidadUnidad === 'kilometros_por_hora'){
+          velocidad = (distanciaSI / 1000) / (tiempoSI / 3600);
+          rapidez = velocidad;
+          aceleracion = velocidad / (tiempoSI / 3600);
+        }
+        else if(velocidadUnidad === 'millas_por_hora'){
+          velocidad = (distanciaSI / 1609) / (tiempoSI / 3600);
+          rapidez = velocidad;
+          aceleracion = velocidad / (tiempoSI / 3600);
+        }
+    //mostrar los resultados
+        let resultado = '';
+
+        document.getElementById('velocidad').textContent = velocidad.toFixed(2) + ' ' + velocidadUnidad; 
+        document.getElementById('aceleracion').textContent = aceleracion.toFixed(2) + 'm/s^2';
+        document.getElementById('rapidez').textContent = rapidez.toFixed(2) + ' ' + velocidadUnidad;
+        document.getElementById('resultado').innerHTML =resultado;
+  }
+</script>
+  
+  </div>
+</div>
+
+
+  <div id="footer"></div>
+<script type="text/javascript">
+  $(function(){
+    $("#footer").load("/lucia/footer.html");
+  });
+</script>
+
+</body>
+</html>
