@@ -1,14 +1,14 @@
 footer{
-	background-color: ;
-	color: ;
-	padding: 50px 0;
+	background-color: #CB9797;
+	color: #6A3636;
+	padding: 60px 0;
 }
 .container{
-	max-width: 300px;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
-.footer-container{
+.footer-content{
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -24,7 +24,7 @@ footer{
 	margin-bottom: 20px;
 }
 .about p{
-	font-size: 10px;
+	font-size: 18px;
 	line-height: 1.5;
 	margin-bottom: 20px;
 }
@@ -41,4 +41,5 @@ footer{
 }
 .contact-links a:hover{
 	transform: translateY(-5px);
+	color: white;
 }
