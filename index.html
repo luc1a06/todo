@@ -1,90 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA"
 
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE_edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="footer.css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="footer.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-    <title> Peliculas </title>
-</head>
-<body>
-  <div style="margin: 24px;">
-      <nav class="navbar navbar-light" style="background-color: #696D7D;">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Inicio</a>
-          <ul class="nav navbar-nav">
-                <li class="active">
-                  <a href="menu.html">Menu</a>
-                </li>
-                <li>
-                  <a href="formulario.html">Formulario</a>
-                </li>
-                <li>
-                  <a href="resultado.html">Resultado</a>
-                </li>
-                <li>
-                  <a href="contacto.html">Contacto</a>
-                </li>
-                <li>
-                   <a href="peliculas.html">Peliculas</a>
-                </li>
-                <li>
-                  <a href="fisica.html">Fisica</a>
-                </li>
-                <li>
-                  <a href="calculadora.html">Calculadora</a>
-                </li>
-          </ul>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div style="margin: 24px;">
+            <nav class="navbar navbar-light" style="background-color: #696D7D;">
+              <div class="center">
+                <a class="navbar-brand" href="index.html">Inicio</a>
+                <ul class="nav navbar-nav">
+                      <li class="active">
+                        <a href="menu.html">Menu</a>
+                      </li>
+                      <li>
+                        <a href="formulario.html">Formulario</a>
+                      </li>
+                      <li>
+                        <a href="resultado.html">Resultado</a>
+                      </li>
+                      <li>
+                        <a href="contacto.html">Contacto</a>
+                      </li>
+                      <li>
+                         <a href="peliculas.html">Peliculas</a>
+                      </li>
+                      <li>
+                        <a href="fisica.html">Fisica</a>
+                      </li>
+                      <li>
+                        <a href="calculadora.html">Calculadora</a>
+                      </li>
+                </ul>
+              </div>
+            </nav>
         </div>
-      </nav>
-  </div>
 
-  <h1>Bienvenidos a la pagina de mi proyecto</h1>
-  <h2>Ana Lucia Lee Santiago</h2>
+        <footer>
+            <div class="container">
+              <div class="footer-content">
+                <div class="footer-section about">
+                  <h2>Contactame</h2>
+                  <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
+                  <div class="contact-links">
+                    <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="http://www.instagram.com/chaeyo.0" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script type="text/javascript">
+              //con lo siguiente, hare 
+            const socialnetworks = document.querySelectorAll('.contact-links a');
+            socialnetworks.forEach(link =>{
+              link.addEventListener('click', e =>{
+                e.preventDefault();
+                window.open(link.href, '_blank');
+              });
+            });
+          </script>
+          </footer>
 
-  <div id="footer"></div>
-<script type="text/javascript">
-  $(function(){
-    $("#footer").load("/todo-main/footer.html");
-  });
-</script>
 
-<footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section about">
-        <h2>Contactame</h2>
-        <p>Si estas interesado en contactarme, puedes hacerlo a traves de cualquiera de las siguientes redes sociales</p>
-        <div class="contact-links">
-          <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="http://www.instagram.com/chaeyo.0" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-	//con lo siguiente, hare 
-  const socialnetworks = document.querySelectorAll('.contact-links a');
-  socialnetworks.forEach(link =>{
-    link.addEventListener('click', e =>{
-      e.preventDefault();
-      window.open(link.href, '_blank');
-    });
-  });
-</script>
-</footer>
 
-</body>
+
+    </body>
 </html>
